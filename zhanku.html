@@ -1,0 +1,392 @@
+<!--模仿站酷静态页面-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>站酷</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="zhankucss.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script src="banner.js" type="text/javascript">
+        window.onload = function () {
+            startBanner();
+        }
+    </script>
+    <header>
+        <!-- 首页       发现       同城       职位       活动       正版素材       课程       ... -->
+        <div>
+            <a href="">
+                <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" width="100" height="50">
+            </a>
+            <nav>
+                <ul>
+
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">首页</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">发现</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">同城</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">职位</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">活动</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">正版素材</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" id="header_tab_a">...</a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" style="position: relative;left: 250px" id="header_tab_a">
+                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
+                        </a>
+                    </li>
+                    <li id="header_tab">
+                        <a href="" style="position: relative;left: 250px" id="header_tab_a">
+                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
+                        </a>
+                    </li>
+
+                    <a href="" style="position: relative;top: 15px;left: 280px;text-decoration: none;color: black">登录</a>
+                    <i></i>
+                    <a href="" style="position: relative;top: 15px;left: 320px;text-decoration: none;color: black">注册</a>
+
+
+                </ul>
+            </nav>
+
+            <div style="clear: both;"></div>
+        </div>
+
+
+    </header>
+    <!--banner轮播-->
+    <div class="div_banner" onmouseover="bannerOver()" onmouseout="bannerOut()">
+        <button class="btn_shift" name="btn_shift" onclick="clickPrev()">&lt;</button>
+        <img class="img_banner" id="banner" src="https://img.zcool.cn/community/010fc25b77873ea80120d8c013363d.jpg@1380w" width="1000"
+            height="600" />
+        <button class="btn_shift" name="btn_shift" onclick="clickNext()">&gt;</button>
+    </div>
+    <!--推荐板块-->
+    <ul id="recommond">
+        <li>
+            <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="250" height="208">
+        </li>
+        <li>
+            <img src="https://reviveimg.hellorf.com/www/images/39985e04253bd220fee2e9ba2b5c78cc.jpeg" alt="" width="250" height="208">
+        </li>
+        <li>
+            <img src="https://reviveimg.hellorf.com/www/images/3996b915bbed2f2bde9b6f9eadea4896.jpg" alt="" width="250" height="208">
+        </li>
+        <li>
+            <img src="https://reviveimg.hellorf.com/www/images/8c80d932626b4d2a502f67a24355a660.jpg" alt="" width="250" height="208">
+        </li>
+        <li>
+            <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="250" height="208">
+        </li>
+    </ul>
+    <div class="content_category_tab">
+        <nav>
+            <ul>
+                <li id="header_tab">
+                    <a href="" id="header_tab_a">首页推荐</a>
+                </li>
+                <li id="header_tab">
+                    <a href="" id="header_tab_a">最新发布</a>
+                </li>
+                <li id="header_tab">
+                    <a href="" id="header_tab_a">上升最快</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--数据列表板块-->
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <div class="page_select">
+        <ul>
+            <li>
+                <a href="">1</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">2</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">3</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">4</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">...</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">5</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">6</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">7</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">8</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">9</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">10</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="">&gt;</a>
+            </li>
+        </ul>
+
+    </div>
+    <div style="margin-left: 265px">
+        <img src="https://reviveimg.hellorf.com/www/images/f80bda8ea79f4a7b2fe09da5ede60f5c.jpg" alt="" width="1370" height="120">
+    </div>
+    <div class="data_list">
+        <ul id="recommond">
+            <li>
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
+                    height="208">
+            </li>
+            <li>
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <a href="">移动版</a>
+                </li>
+                <li>
+                    <a href="">关于我们</a>
+                </li>
+                <li>
+                    <a href="">加入站酷</a>
+                </li>
+                <li>
+                    <a href="">用户协议</a>
+                </li>
+                <li>
+                    <a href="">企业服务</a>
+                </li>
+                <li>
+                    <a href="">帮助中心</a>
+                </li>
+                <li>
+                    <a href="">中文</a>
+                </li>
+                <li>
+                    <a href="">English</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="footer-wrapper-bottom">
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11017824号-4</a>
+            <i></i>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证130164号</a>
+            <i></i>
+            <span class="police">
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502000501" target="_blank">京公网安备11010502000501号</a>
+            </span>
+            <i></i>
+            <span>
+                <a href="https://static.zcool.cn/git_z/z/common/images/netlicence.png" target="_blank">网络文化经营许可证 京网文[2016]6173-844号</a>
+            </span>
+            <i></i>
+            <span>
+                <a href="https://static.zcool.cn/git_z/z/common/images/tvlicence.png" target="_blank">广播电视节目制作经营许可证（京）字第06990号</a>
+            </span>
+        </div>
+        <div class="space-footer-bottom">
+            <a href="http://www.12377.cn/" target="_blank">网上有害信息举报专区</a>
+            <i></i>
+            <span>不良信息举报电话：010-56538658</span>
+            <i></i>
+            <span>举报邮箱 jubao@zcool.com.cn</span>
+            <i></i>
+            <span>联系电话：010-56538600</span>
+            <span class="copyrightLink">Copyright © 2006-2018
+                <a href="https://www.zcool.com.cn" target="_blank">ZCOOL站酷</a>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>
