@@ -14,6 +14,48 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="zhankucss.css">
+    <style>
+         .dropdown {
+            display: inline-block;
+            padding: 0px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 0px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropbtn {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding:0px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: snow;
+            background-color: #111;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,17 +72,27 @@
         <!-- 首页       发现       同城       职位       活动       正版素材       课程       ... -->
         <div>
             <a href="">
-                <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" width="100" height="50">
+                <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" id="header_logo">
             </a>
             <nav>
                 <ul>
 
                     <li id="header_tab">
-                        <a href="" id="header_tab_a">首页</a>
+                        <a href="" id="header_tab_a">
+                            <b>首页</b>
+                        </a>
                     </li>
-                    <li id="header_tab">
+                    <!-- <li id="header_tab">
                         <a href="" id="header_tab_a">发现</a>
-                    </li>
+                    </li> -->
+                    <div class="dropdown" id="header_tab">
+                        <a href="#" class="dropbtn">发现</a>
+                        <div class="dropdown-content">
+                            <a href="#"  id="header_tab_a">链接 1</a>
+                            <a href="#"  id="header_tab_a">链接 2</a>
+                            <a href="#"  id="header_tab_a">链接 3</a>
+                        </div>
+                    </div>
                     <li id="header_tab">
                         <a href="" id="header_tab_a">同城</a>
                     </li>
@@ -57,189 +109,174 @@
                         <a href="" id="header_tab_a">...</a>
                     </li>
                     <li id="header_tab">
-                        <a href="" style="position: relative;left: 250px" id="header_tab_a">
+                        <a href="" style="position: relative;left: 100px" id="header_tab_a">
                             <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
                         </a>
                     </li>
                     <li id="header_tab">
-                        <a href="" style="position: relative;left: 250px" id="header_tab_a">
+                        <a href="" style="position: relative;left: 100px" id="header_tab_a">
                             <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
                         </a>
                     </li>
 
-                    <a href="" style="position: relative;top: 15px;left: 280px;text-decoration: none;color: black">登录</a>
-                    <i></i>
-                    <a href="" style="position: relative;top: 15px;left: 320px;text-decoration: none;color: black">注册</a>
+                    <div class="login_register">
+                        <a href="">登录</a>
+                        |
+                        <a href="">注册</a>
+                    </div>
+
 
 
                 </ul>
             </nav>
 
-            <div style="clear: both;"></div>
+            <!-- <div style="clear: both;"></div> -->
         </div>
 
 
     </header>
     <!--banner轮播-->
     <div class="div_banner" onmouseover="bannerOver()" onmouseout="bannerOut()">
-        <button class="btn_shift" name="btn_shift" onclick="clickPrev()">&lt;</button>
-        <img class="img_banner" id="banner" src="https://img.zcool.cn/community/010fc25b77873ea80120d8c013363d.jpg@1380w" width="1000"
-            height="600" />
-        <button class="btn_shift" name="btn_shift" onclick="clickNext()">&gt;</button>
+        <button class="btn_shift_left" name="btn_shift" onclick="clickPrev()">&lt;</button>
+        <img class="img_banner" id="banner" src="https://img.zcool.cn/community/010fc25b77873ea80120d8c013363d.jpg@1380w" />
+        <button class="btn_shift_right" name="btn_shift" onclick="clickNext()">&gt;</button>
     </div>
     <!--推荐板块-->
-    <ul id="recommond">
-        <li>
-            <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="250" height="208">
-        </li>
-        <li>
-            <img src="https://reviveimg.hellorf.com/www/images/39985e04253bd220fee2e9ba2b5c78cc.jpeg" alt="" width="250" height="208">
-        </li>
-        <li>
-            <img src="https://reviveimg.hellorf.com/www/images/3996b915bbed2f2bde9b6f9eadea4896.jpg" alt="" width="250" height="208">
-        </li>
-        <li>
-            <img src="https://reviveimg.hellorf.com/www/images/8c80d932626b4d2a502f67a24355a660.jpg" alt="" width="250" height="208">
-        </li>
-        <li>
-            <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="250" height="208">
-        </li>
-    </ul>
+    <div>
+        <ul id="recommond">
+            <li>
+                <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
+            </li>
+            <li>
+                <img src="https://reviveimg.hellorf.com/www/images/39985e04253bd220fee2e9ba2b5c78cc.jpeg" alt="" width="210" height="168">
+            </li>
+            <li>
+                <img src="https://reviveimg.hellorf.com/www/images/3996b915bbed2f2bde9b6f9eadea4896.jpg" alt="" width="210" height="168">
+            </li>
+            <li>
+                <img src="https://reviveimg.hellorf.com/www/images/8c80d932626b4d2a502f67a24355a660.jpg" alt="" width="210" height="168">
+            </li>
+            <li>
+                <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
+            </li>
+        </ul>
+    </div>
+
     <div class="content_category_tab">
-        <nav>
+        
             <ul>
-                <li id="header_tab">
-                    <a href="" id="header_tab_a">首页推荐</a>
+                <li id="content_category_tab_li">
+                    <a href="">首页推荐</a>
                 </li>
-                <li id="header_tab">
-                    <a href="" id="header_tab_a">最新发布</a>
+                <li id="content_category_tab_li">
+                    <a href="">最新发布</a>
                 </li>
-                <li id="header_tab">
-                    <a href="" id="header_tab_a">上升最快</a>
+                <li id="content_category_tab_li">
+                    <a href="">上升最快</a>
                 </li>
             </ul>
-        </nav>
+       
     </div>
     <!--数据列表板块-->
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
     <div class="page_select">
         <ul>
             <li>
-                <a href="">1</a>
+                <a href="" id="page_selected">1</a>
             </li>
         </ul>
         <ul>
@@ -257,11 +294,7 @@
                 <a href="">4</a>
             </li>
         </ul>
-        <ul>
-            <li>
-                <a href="">...</a>
-            </li>
-        </ul>
+
         <ul>
             <li>
                 <a href="">5</a>
@@ -279,17 +312,17 @@
         </ul>
         <ul>
             <li>
-                <a href="">8</a>
+                <a href="">...</a>
             </li>
         </ul>
         <ul>
             <li>
-                <a href="">9</a>
+                <a href="">99</a>
             </li>
         </ul>
         <ul>
             <li>
-                <a href="">10</a>
+                <a href="">100</a>
             </li>
         </ul>
 
@@ -306,23 +339,19 @@
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="250"
-                    height="208">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="250" height="208">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
             </li>
         </ul>
     </div>
