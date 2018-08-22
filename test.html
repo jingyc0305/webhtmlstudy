@@ -1,0 +1,238 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            background-color: rgb(204, 247, 15);
+           
+        }
+      
+        ul li {
+            list-style: none;
+            float: left;
+        }
+
+        ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: rgb(19, 1, 1);
+            padding: 16px 20px;
+            text-align: center;
+        }
+       
+        /* ul a:hover{
+            background-color: black;
+            color: rgb(7, 1, 1);
+        } */
+
+        /* ul li a:hover {
+            background-color: black;
+            color: rgb(7, 1, 1);
+        } */
+
+        .dropbtn {
+            display: inline-block;
+            color: rgb(22, 1, 1);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: rgb(240, 250, 244);
+            background-color: #111;
+        }
+
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #header_logo {
+            width: 120px;
+            height: 20px;
+            padding: 2px;
+            vertical-align: middle;
+            padding-left: 75px;
+        }
+        #home_tab{
+            padding-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    <ul>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">discover</a>
+            <div class="dropdown-content">
+                <a href="#">discover 1</a>
+                <a href="#">discover 2</a>
+                <a href="#">discover 3</a>
+            </div>
+        </div>
+        <li>
+            <a href="">home</a>
+        </li>
+        <!-- <li><a href="">discover</a></li>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">discover</a>
+            <div class="dropdown-content">
+                <a href="#">discover 1</a>
+                <a href="#">discover 2</a>
+                <a href="#">discover 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">discover</a>
+            <div class="dropdown-content">
+                <a href="#">discover 1</a>
+                <a href="#">discover 2</a>
+                <a href="#">discover 3</a>
+            </div>
+        </div>
+        <li>
+            <a href="">search</a>
+        </li>
+    </ul> -->
+
+
+
+
+    <ul>
+
+        <a href="">
+            <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" id="header_logo">
+        </a>
+        
+                <div class="dropdown" id="home_tab">
+                        <a href="#" class="dropbtn">首页</a>
+                        <div class="dropdown-content">
+                            <a href="#">首页 1</a>
+                            <a href="#">首页 2</a>
+                            <a href="#">首页 3</a>
+                        </div>
+                    </div>
+            
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">发现</a>
+                        <div class="dropdown-content">
+                            <a href="#">发现 1</a>
+                            <a href="#">发现 2</a>
+                            <a href="#">发现 3</a>
+                        </div>
+                    </div>
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">同城</a>
+                        <div class="dropdown-content">
+                            <a href="#">同城 1</a>
+                            <a href="#">同城 2</a>
+                            <a href="#">同城 3</a>
+                        </div>
+                    </div>
+            
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">职位</a>
+                        <div class="dropdown-content">
+                            <a href="#">职位 1</a>
+                            <a href="#">职位 2</a>
+                            <a href="#">职位 3</a>
+                        </div>
+                    </div>
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">活动</a>
+                        <div class="dropdown-content">
+                            <a href="#">活动 1</a>
+                            <a href="#">活动 2</a>
+                            <a href="#">活动 3</a>
+                        </div>
+                    </div>
+            
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">正版素材</a>
+                        <div class="dropdown-content">
+                            <a href="#">正版素材 1</a>
+                            <a href="#">正版素材 2</a>
+                            <a href="#">正版素材 3</a>
+                        </div>
+                    </div>
+            
+            
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">...</a>
+                        <div class="dropdown-content">
+            
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="" class="dropbtn" style="vertical-align: middle;margin-left: 50px">
+                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
+                        </a>
+                    </div>
+            
+            
+                    <div class="dropdown">
+            
+                        <a href="" class="dropbtn" style="margin-left: 10px;left: 80px;vertical-align: middle;">
+                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
+                        </a>
+                    </div>
+            
+            
+            
+                    <div class="dropdown" style="position: relative;left: 150px">
+                        <a href="" style="padding-left: 18px;padding-right: 18px;text-decoration: none">登录</a>
+                        |
+                        <a href="" style="padding-left: 18px;padding-right: 18px;text-decoration: none">注册</a>
+                    </div>
+      
+       
+
+
+    </ul>
+
+    <!-- 
+        <div style="clear: both;"></div> -->
+
+
+</body>
+
+</html>

@@ -10,14 +10,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>站酷</title>
+    <title>仿站酷首页</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="zhankucss.css">
     <style>
-         .dropdown {
+        .dropdown {
+            position: relative;
             display: inline-block;
-            padding: 0px;
+            /* top: 15px; */
         }
 
         .dropdown-content {
@@ -30,7 +31,7 @@
 
         .dropdown-content a {
             color: black;
-            padding: 0px;
+            padding: 15px;
             text-decoration: none;
             display: block;
         }
@@ -38,22 +39,24 @@
         .dropbtn {
             display: inline-block;
             color: black;
+            padding: 20px;
             text-align: center;
-            padding:0px;
             text-decoration: none;
+
         }
 
         .dropdown:hover .dropbtn {
-            color: snow;
             background-color: #111;
+
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1
+            background-color: #f1f1f1;
+
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: inline-block;
         }
     </style>
 </head>
@@ -68,210 +71,565 @@
             startBanner();
         }
     </script>
-    <header>
+    <div class="top_part">
+
         <!-- 首页       发现       同城       职位       活动       正版素材       课程       ... -->
-        <div>
+        <div class="header">
             <a href="">
                 <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" id="header_logo">
             </a>
-            <nav>
-                <ul>
 
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">
-                            <b>首页</b>
-                        </a>
-                    </li>
-                    <!-- <li id="header_tab">
-                        <a href="" id="header_tab_a">发现</a>
-                    </li> -->
-                    <div class="dropdown" id="header_tab">
+            <ul>
+                <li>
+                    <a href="">
+                        <b>首页</b>
+                    </a>
+                </li>
+
+                <li>
+                    <div class="dropdown">
                         <a href="#" class="dropbtn">发现</a>
                         <div class="dropdown-content">
-                            <a href="#"  id="header_tab_a">链接 1</a>
-                            <a href="#"  id="header_tab_a">链接 2</a>
-                            <a href="#"  id="header_tab_a">链接 3</a>
+                            <a href="#">发现 1</a>
+                            <a href="#">发现 2</a>
+                            <a href="#">发现 3</a>
                         </div>
                     </div>
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">同城</a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">职位</a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">活动</a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">正版素材</a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" id="header_tab_a">...</a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" style="position: relative;left: 100px" id="header_tab_a">
-                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
-                        </a>
-                    </li>
-                    <li id="header_tab">
-                        <a href="" style="position: relative;left: 100px" id="header_tab_a">
-                            <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
-                        </a>
-                    </li>
-
-                    <div class="login_register">
-                        <a href="">登录</a>
-                        |
-                        <a href="">注册</a>
-                    </div>
+                </li>
 
 
+                <li>
+                    <a href="">同城</a>
+                </li>
+                <li>
+                    <a href="">职位</a>
+                </li>
+                <li>
+                    <a href="">活动</a>
+                </li>
+                <li>
+                    <a href="">正版素材</a>
+                </li>
+                <li>
+                    <a href="">...</a>
+                </li>
+                <li>
+                    <a href="" style="position: relative;left: 50px" id="header_tab_a">
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="position: relative;left: 50px" id="header_tab_a">
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
+                    </a>
+                </li>
 
-                </ul>
-            </nav>
+                <div class="login_register">
+                    <a href="">登录</a>
+                    |
+                    <a href="">注册</a>
+                </div>
 
-            <!-- <div style="clear: both;"></div> -->
+
+
+            </ul>
+
+
+            <div style="clear: both;"></div>
         </div>
 
 
-    </header>
-    <!--banner轮播-->
-    <div class="div_banner" onmouseover="bannerOver()" onmouseout="bannerOut()">
-        <button class="btn_shift_left" name="btn_shift" onclick="clickPrev()">&lt;</button>
-        <img class="img_banner" id="banner" src="https://img.zcool.cn/community/010fc25b77873ea80120d8c013363d.jpg@1380w" />
-        <button class="btn_shift_right" name="btn_shift" onclick="clickNext()">&gt;</button>
-    </div>
-    <!--推荐板块-->
-    <div>
-        <ul id="recommond">
-            <li>
-                <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
-            </li>
-            <li>
-                <img src="https://reviveimg.hellorf.com/www/images/39985e04253bd220fee2e9ba2b5c78cc.jpeg" alt="" width="210" height="168">
-            </li>
-            <li>
-                <img src="https://reviveimg.hellorf.com/www/images/3996b915bbed2f2bde9b6f9eadea4896.jpg" alt="" width="210" height="168">
-            </li>
-            <li>
-                <img src="https://reviveimg.hellorf.com/www/images/8c80d932626b4d2a502f67a24355a660.jpg" alt="" width="210" height="168">
-            </li>
-            <li>
-                <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
-            </li>
-        </ul>
-    </div>
 
-    <div class="content_category_tab">
-        
-            <ul>
-                <li id="content_category_tab_li">
-                    <a href="">首页推荐</a>
+        <!--banner轮播-->
+        <div class="div_banner" onmouseover="bannerOver()" onmouseout="bannerOut()">
+            <button class="btn_shift_left" name="btn_shift" onclick="clickPrev()">&lt;</button>
+            <img class="img_banner" id="banner" src="https://img.zcool.cn/community/010fc25b77873ea80120d8c013363d.jpg@1380w" />
+            <button class="btn_shift_right" name="btn_shift" onclick="clickNext()">&gt;</button>
+        </div>
+        <!--推荐板块-->
+        <div>
+            <ul id="recommond">
+                <li>
+                    <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
                 </li>
-                <li id="content_category_tab_li">
-                    <a href="">最新发布</a>
+                <li>
+                    <img src="https://reviveimg.hellorf.com/www/images/39985e04253bd220fee2e9ba2b5c78cc.jpeg" alt="" width="210" height="168">
                 </li>
-                <li id="content_category_tab_li">
-                    <a href="">上升最快</a>
+                <li>
+                    <img src="https://reviveimg.hellorf.com/www/images/3996b915bbed2f2bde9b6f9eadea4896.jpg" alt="" width="210" height="168">
+                </li>
+                <li>
+                    <img src="https://reviveimg.hellorf.com/www/images/8c80d932626b4d2a502f67a24355a660.jpg" alt="" width="210" height="168">
+                </li>
+                <li>
+                    <img src="https://reviveimg.hellorf.com/www/images/464447de10a7defdf9b403571dc47161.jpg" alt="" width="210" height="168">
                 </li>
             </ul>
-       
+        </div>
+    </div>
+
+
+    <div class="content_category_tab">
+
+        <ul>
+            <li id="content_category_tab_li">
+                <a href="" class="active">首页推荐</a>
+            </li>
+            <li id="content_category_tab_li">
+                <a href="">最新发布</a>
+            </li>
+            <li id="content_category_tab_li">
+                <a href="">上升最快</a>
+            </li>
+        </ul>
+
     </div>
     <!--数据列表板块-->
+
     <div class="data_list">
-        <ul id="recommond">
-            <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
-            </li>
-        </ul>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">站酷一周精彩评论整理</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9845</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72 </div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">站酷一周精彩评论整理</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">站酷一周精彩评论整理</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">站酷一周精彩评论整理</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg">
+                    <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="图片文本描述" width="210" height="168">
+                </a>
+                <div class="desc">站酷一周精彩评论整理</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+
+            </div>
+        </div>
     </div>
     <div class="data_list">
-        <ul id="recommond">
-            <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
-            </li>
-        </ul>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">【好好面试】设计师的职场...</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">【好好面试】设计师的职场...</div>
+                <div class="sub_desc">文章-观点-多领域</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">#创意周报 八月 第三周#</div>
+                <div class="sub_desc">特别企划</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">#创意周报 八月 第三周#</div>
+                <div class="sub_desc">特别企划</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg">
+                    <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="图片文本描述" width="210" height="168">
+                </a>
+                <div class="desc">#创意周报 八月 第三周#</div>
+                <div class="sub_desc">特别企划</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="data_list">
-        <ul id="recommond">
-            <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
-            </li>
-        </ul>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">#创意周报 八月 第三周#</div>
+                <div class="sub_desc">特别企划</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">我把对你的喜欢都藏进夹</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">我把对你的喜欢都藏进夹</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">我把对你的喜欢都藏进夹</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg">
+                    <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="图片文本描述" width="210" height="168">
+                </a>
+                <div class="desc">我把对你的喜欢都藏进夹</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="data_list">
-        <ul id="recommond">
-            <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
-            </li>
-        </ul>
-    </div>
-    <div class="data_list">
-        <ul id="recommond">
-            <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
-            </li>
-            <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
-            </li>
-        </ul>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">我把对你的喜欢都藏进夹</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">smoke cloth concept烟...</div>
+                <div class="sub_desc">三维-场景</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">清凉古风饮品海报摄影｜乌...</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt="">9874</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg">
+                    <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
+                        height="168">
+                </a>
+                <div class="desc">清凉古风饮品海报摄影｜乌...</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive">
+            <div class="img">
+                <a target="_blank" href="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg">
+                    <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="图片文本描述" width="210" height="168">
+                </a>
+                <div class="desc">清凉古风饮品海报摄影｜乌...</div>
+                <div class="sub_desc">摄影-静物</div>
+                <div class="sub_menu">
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-liulan.svg?v=1" alt=""> 9613</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-pinglun.svg?v=1" alt=""> 72</div>
+                    <div>
+                        <img src="https://static.zcool.cn/git_z/build/images/svg/card-zan.svg?v=1" alt=""> 504</div>
+                </div>
+                <div class="sub_author">
+                    <img src="https://img.zcool.cn/community/04521055474bdd0000019ae95df876.jpg@80w_80h_1c_1e_1o_100sh.jpg" alt="">
+                    <span id="author_content">1小时前</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="page_select">
         <ul>
@@ -333,25 +691,29 @@
         </ul>
 
     </div>
-    <div style="margin-left: 265px">
-        <img src="https://reviveimg.hellorf.com/www/images/f80bda8ea79f4a7b2fe09da5ede60f5c.jpg" alt="" width="1370" height="120">
+    <div class="ad_img">
+        <img src="https://reviveimg.hellorf.com/www/images/f80bda8ea79f4a7b2fe09da5ede60f5c.jpg" alt="" height="120">
     </div>
     <div class="data_list">
         <ul id="recommond">
             <li>
-                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
+                <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="210"
+                    height="168">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
+                <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="210"
+                    height="168">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
+                <img src="https://img.zcool.cn/community/01ecf15b779bf6a80120d8c011f979.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="210"
+                    height="168">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="">
+                <img src="https://img.zcool.cn/community/0147945b723691a801215c8f3db7dd.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="" width="210"
+                    height="168">
             </li>
             <li>
-                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="">
+                <img src="https://img.zcool.cn/community/01b9f85b78e096a801218d32ef99e7.jpg" alt="" width="210" height="168">
             </li>
         </ul>
     </div>
@@ -384,9 +746,8 @@
                 </li>
             </ul>
         </div>
-
-
         <div class="footer-wrapper-bottom">
+            <hr style="border:0;background-color:rgb(75, 73, 73);height:1px;" />
             <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11017824号-4</a>
             <i></i>
             <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证130164号</a>
