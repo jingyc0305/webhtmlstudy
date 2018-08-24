@@ -12,13 +12,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>仿站酷首页</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="zhankucss.css">
     <style>
-        .dropdown {
-            position: relative;
+        .dropbtn {
             display: inline-block;
-            /* top: 15px; */
+            color: rgb(22, 1, 1);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: rgb(240, 250, 244);
+            background-color: #111;
+        }
+
+        .dropdown {
+            display: inline-block;
         }
 
         .dropdown-content {
@@ -31,32 +44,29 @@
 
         .dropdown-content a {
             color: black;
-            padding: 15px;
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
-        .dropbtn {
-            display: inline-block;
-            color: black;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #111;
-
-        }
-
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
-
+            background-color: #f1f1f1
         }
 
         .dropdown:hover .dropdown-content {
-            display: inline-block;
+            display: block;
+        }
+
+        #header_logo {
+            width: 120px;
+            height: 20px;
+            padding: 2px;
+            vertical-align: middle;
+            padding-left: 75px;
+        }
+
+        #home_tab {
+            padding-left: 200px;
         }
     </style>
 </head>
@@ -70,75 +80,116 @@
         window.onload = function () {
             startBanner();
         }
+        window.setFontSize = function () {
+            var size = document.documentElement.clientWidth / 750 * 100;
+            document.documentElement.style.fontSize = size.toString() + "px";
+        };
+        setFontSize();
+        //在屏幕大小变化时重新设置大小
+        $(window).resize(function () {
+            setFontSize()
+        });
     </script>
     <div class="top_part">
 
         <!-- 首页       发现       同城       职位       活动       正版素材       课程       ... -->
-        <div class="header">
+        <ul class="header_ul">
+
             <a href="">
                 <img src="https://static.zcool.cn/git_z/z/common/images/svg/logo.svg" alt="logo" id="header_logo">
             </a>
 
-            <ul>
-                <li>
-                    <a href="">
-                        <b>首页</b>
-                    </a>
-                </li>
-
-                <li>
-                    <div class="dropdown">
-                        <a href="#" class="dropbtn">发现</a>
-                        <div class="dropdown-content">
-                            <a href="#">发现 1</a>
-                            <a href="#">发现 2</a>
-                            <a href="#">发现 3</a>
-                        </div>
-                    </div>
-                </li>
-
-
-                <li>
-                    <a href="">同城</a>
-                </li>
-                <li>
-                    <a href="">职位</a>
-                </li>
-                <li>
-                    <a href="">活动</a>
-                </li>
-                <li>
-                    <a href="">正版素材</a>
-                </li>
-                <li>
-                    <a href="">...</a>
-                </li>
-                <li>
-                    <a href="" style="position: relative;left: 50px" id="header_tab_a">
-                        <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
-                    </a>
-                </li>
-                <li>
-                    <a href="" style="position: relative;left: 50px" id="header_tab_a">
-                        <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
-                    </a>
-                </li>
-
-                <div class="login_register">
-                    <a href="">登录</a>
-                    |
-                    <a href="">注册</a>
+            <div class="dropdown" id="home_tab">
+                <a href="#" class="dropbtn">首页</a>
+                <div class="dropdown-content">
+                    <a href="#">首页 1</a>
+                    <a href="#">首页 2</a>
+                    <a href="#">首页 3</a>
                 </div>
+            </div>
 
 
 
-            </ul>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">发现</a>
+                <div class="dropdown-content">
+                    <a href="#">发现 1</a>
+                    <a href="#">发现 2</a>
+                    <a href="#">发现 3</a>
+                </div>
+            </div>
 
 
-            <div style="clear: both;"></div>
-        </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">同城</a>
+                <div class="dropdown-content">
+                    <a href="#">同城 1</a>
+                    <a href="#">同城 2</a>
+                    <a href="#">同城 3</a>
+                </div>
+            </div>
 
 
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">职位</a>
+                <div class="dropdown-content">
+                    <a href="#">职位 1</a>
+                    <a href="#">职位 2</a>
+                    <a href="#">职位 3</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">活动</a>
+                <div class="dropdown-content">
+                    <a href="#">活动 1</a>
+                    <a href="#">活动 2</a>
+                    <a href="#">活动 3</a>
+                </div>
+            </div>
+
+
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">正版素材</a>
+                <div class="dropdown-content">
+                    <a href="#">正版素材 1</a>
+                    <a href="#">正版素材 2</a>
+                    <a href="#">正版素材 3</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">...</a>
+                <div class="dropdown-content">
+
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="" class="dropbtn" style="vertical-align: middle;margin-left: 80px">
+                    <img src="https://static.zcool.cn/git_z/build/images/svg/nav-search.svg?v=1" alt="search" width="20px" height="20px">
+                </a>
+            </div>
+
+
+            <div class="dropdown">
+
+                <a href="" class="dropbtn" style="margin-left: 10px;vertical-align: middle;">
+                    <img src="https://static.zcool.cn/git_z/build/images/svg/nav-upload.svg" alt="search" width="20px" height="20px">
+                </a>
+            </div>
+
+
+
+            <div class="dropdown" style="position: relative;left: 150px">
+                <a href="" style="padding-left: 18px;padding-right: 18px;text-decoration: none">登录</a>
+                |
+                <a href="" style="padding-left: 18px;padding-right: 18px;text-decoration: none">注册</a>
+            </div>
+        </ul>
 
         <!--banner轮播-->
         <div class="div_banner" onmouseover="bannerOver()" onmouseout="bannerOut()">
@@ -168,22 +219,25 @@
         </div>
     </div>
 
+    <div class="tab">
+        <div class="content_category_tab">
 
-    <div class="content_category_tab">
+            <ul>
+                <li id="content_category_tab_li">
+                    <a href="" class="active">首页推荐</a>
+                </li>
+                <li id="content_category_tab_li">
+                    <a href="">最新发布</a>
+                </li>
+                <li id="content_category_tab_li">
+                    <a href="">上升最快</a>
+                </li>
+            </ul>
 
-        <ul>
-            <li id="content_category_tab_li">
-                <a href="" class="active">首页推荐</a>
-            </li>
-            <li id="content_category_tab_li">
-                <a href="">最新发布</a>
-            </li>
-            <li id="content_category_tab_li">
-                <a href="">上升最快</a>
-            </li>
-        </ul>
-
+        </div>
     </div>
+
+
     <!--数据列表板块-->
 
     <div class="data_list">
@@ -305,7 +359,7 @@
                     <img src="https://img.zcool.cn/community/01cac15b76b783a801218d32d2341c.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
                         height="168">
                 </a>
-                <div class="desc">【好好面试】设计师的职场...</div>
+                <div class="desc">【好好面试】设计师的职场</div>
                 <div class="sub_desc">文章-观点-多领域</div>
                 <div class="sub_menu">
                     <div>
@@ -327,7 +381,7 @@
                     <img src="https://img.zcool.cn/community/0153615b7793a3a801218d322ed5b7.jpeg@260w_195h_1c_1e_1o_100sh.jpg" alt="图片文本描述" width="210"
                         height="168">
                 </a>
-                <div class="desc">【好好面试】设计师的职场...</div>
+                <div class="desc">【好好面试】设计师的职场</div>
                 <div class="sub_desc">文章-观点-多领域</div>
                 <div class="sub_menu">
                     <div>
@@ -747,7 +801,7 @@
             </ul>
         </div>
         <div class="footer-wrapper-bottom">
-            <hr style="border:0;background-color:rgb(75, 73, 73);height:1px;" />
+            <hr style="border:0;background-color:rgb(75, 73, 73);height:1px;width: 60%;" />
             <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11017824号-4</a>
             <i></i>
             <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证130164号</a>
